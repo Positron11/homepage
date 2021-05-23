@@ -1,13 +1,19 @@
+/* GLOBAL */
+
 body, html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	color: #eee;
 	font-size: 20px;
 	background-color: black;
 	font-family: 'Cormorant Garamond', serif;
     user-select: none;
 }
+
+
+/* MAIN PAGE */
 
 #main {	
 	width: 100%;
@@ -22,22 +28,67 @@ body, html {
 	background-size: cover;
 	background-position: center;
 	box-shadow: 0 0 2em 2em rgba(0,0,0,0.7) inset;
-	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Images/background.gif");
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/background.gif");
+}
+
+#main_content {
+	text-align: center;
+	transition: 1s ease;
+}
+
+#main_content:hover {
+	opacity: 1 !important;
 }
 
 #logo {
 	width: 250px;
 	max-width: 80%;
-	--secondary: #eee;
 }
 
 #name {
-	color: #eee;
 	font-size: 3.2em;
     margin-top: 20px;
-	font-weight: 600;
 	text-align: center;
 }
+
+
+/* MUSIC PLAYER */
+
+#player {
+	gap: 0.8em;
+	left: 50%;
+	bottom: 0;
+	padding: 1em;
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	transform: translate(-50%, 100%);
+	transition: 1s ease;
+}
+
+#track_progress {
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#player_controls {
+	gap: 1em;
+	display: flex;
+	font-size: 0.8em;
+	flex-direction: row;
+}
+
+#player_controls>* {
+	cursor: pointer;
+	transition: 0.05s;
+}
+
+#player_controls>*:active {
+	color: #a1a1a1;
+}
+
+
+/* BREAKPOINTS */
 
 @media only screen and (max-width: 680px) {
 	#name {
