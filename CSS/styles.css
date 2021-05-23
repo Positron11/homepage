@@ -91,6 +91,9 @@ body, html {
 /* BREAKPOINTS */
 
 @media only screen and (max-width: 680px) {
+	#main {
+		background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.8)), url("../Assets/Images/background.gif");
+	}
 	#name {
 		font-size: 9vw;
         margin-top: 3vw;
