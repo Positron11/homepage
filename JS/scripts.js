@@ -14,20 +14,20 @@ $.Finger = {
 $(function(){
     // Initialize track durations
     track_display_duration = secondsToDisplayTime(track.duration);
-
+    
     // Activate music player
 	$("#logo").on("press", function() {
         $("#main_content").css("transform", "scale(0.7)");
 		$("#player").css("transform", "translate(-50%, 0)");
-		track.play();
+        track.play();
 	});
 
     // When track...
 	$(track).bind("playing", function(){ // is playing
-		$("#play_pause").removeClass("fa-play").addClass("fa-pause");
+		$("#play_pause").removeClass().addClass("fas fa-pause");
 	});
 	$(track).bind("pause", function(){ // is paused
-		$("#play_pause").removeClass("fa-pause").addClass("fa-play");
+		$("#play_pause").removeClass().addClass("fas fa-play");
 	});
     $(track).bind("durationchange", function(){ // changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);
@@ -59,7 +59,8 @@ $(function(){
 
 // Switch tracks
 function switchTrack(track_index) {
-	$(track).attr("src", tracks_path + track_index + ".mp3");
+    $("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
+    $(track).attr("src", tracks_path + track_index + ".mp3");
 	track.pause(); track.load(); track.play();
 }
 
