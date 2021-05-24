@@ -8,7 +8,7 @@ var track = document.getElementById("track");
 
 // Set press duration
 $.Finger = {
-	pressDuration: 3000,
+	pressDuration: 2000,
 };
 
 $(function(){
