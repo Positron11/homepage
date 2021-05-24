@@ -72,7 +72,7 @@ $(function(){
 // Switch tracks
 function switchTrack(track_index) {
     $("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
-    $(track).attr("src", tracks_path + track_list[track_index]);
+    $(track).attr("src", tracks_path + track_list[track_index - 1]);
 	track.pause(); track.load(); track.play();
 }
 
