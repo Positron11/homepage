@@ -12,6 +12,9 @@ $.Finger = {
 };
 
 $(function(){
+	// Shuffle library
+	shuffleArray(track_list);
+
 	// Initialize track
 	$(track).attr("src", tracks_path + track_list[0]);
 
@@ -76,4 +79,12 @@ function switchTrack(track_index) {
 // Convert seconds to readable string
 function secondsToDisplayTime(seconds) {
     return String(parseInt(Math.round(seconds) / 60)) + ":" + String(Math.round(seconds) % 60).padStart(2, '0');
+}
+
+// Shuffle Array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
