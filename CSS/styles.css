@@ -70,6 +70,34 @@ body, html {
 	transition: 1s ease;
 }
 
+#track_info {
+	top: 1em;
+	left: 50%;
+	opacity: 0;
+	font-size: 0.8em;
+	text-align: center;
+	position: absolute;
+	transition: 2s ease;
+	transform: translateX(-50%);
+}
+
+#track_artist {
+	font-style: italic;
+	margin-bottom: 0.3em;
+}
+
+#track_title::before, #track_title::after {
+	content: "♫";
+}
+
+#track_title::before {
+	margin-right: 0.5em;
+}
+
+#track_title::after {
+	margin-left: 0.4em;
+}
+
 #track_progress {
 	font-size: 0.9em;
 	text-align: center;
