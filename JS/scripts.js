@@ -16,6 +16,7 @@ $(function(){
     
     // Activate music player
 	$("#logo").on("press", function() {
+		$("#main_content").css("opacity", "0.7");
         $("#main_content").css("transform", "scale(0.7)");
 		$("#player").css("transform", "translate(-50%, 0)");
         track.play();
