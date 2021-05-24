@@ -1,5 +1,6 @@
 // Initialize vars
 var track_index = 1;
+var track_info = [];
 var track_display_duration = "";
 var track_display_progress = "";
 var tracks_path = "Assets/Music/";
@@ -11,11 +12,15 @@ $.Finger = {
 };
 
 $(function(){
+	// Initialize track
+	$(track).attr("src", tracks_path + track_list[0]);
+
     // Initialize track durations
     track_display_duration = secondsToDisplayTime(track.duration);
     
     // Activate music player
 	$("#logo").on("press", function() {
+		$("#track_info").css("opacity", "1");
 		$("#main_content").css("opacity", "0.7");
         $("#main_content").css("transform", "scale(0.7)");
 		$("#player").css("transform", "translate(-50%, 0)");
@@ -44,10 +49,14 @@ $(function(){
 		switchTrack(track_index);
 	});
 	
-    // Update progress display
+    // Update progress and name display
 	$(track).bind("timeupdate", function(){
         track_display_progress = secondsToDisplayTime(track.currentTime);
         $("#track_progress").text(track_display_progress + " / " + track_display_duration);
+		track_info = track_list[track_index - 1].replace(".mp3", "").split(" - ");
+		$("#track_artist").text(track_info[0]);
+		$("#track_title").text(track_info[1]);
+
 	})
 
     // Autoplay
@@ -60,7 +69,7 @@ $(function(){
 // Switch tracks
 function switchTrack(track_index) {
     $("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
-    $(track).attr("src", tracks_path + track_index + ".mp3");
+    $(track).attr("src", tracks_path + track_list[track_index]);
 	track.pause(); track.load(); track.play();
 }
 
