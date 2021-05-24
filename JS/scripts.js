@@ -1,6 +1,5 @@
 // Initialize vars
 var track_index = 1;
-var track_count = 26;
 var track_display_duration = "";
 var track_display_progress = "";
 var tracks_path = "Assets/Music/";
