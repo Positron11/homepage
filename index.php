@@ -49,6 +49,10 @@
 	<audio id="track" src="Assets/Music/1.mp3"></audio>
 
 
+	<!-- Get tracklist length -->
+	<?php $file_count = iterator_count(new FilesystemIterator('Assets/Music/', FilesystemIterator::SKIP_DOTS)); ?>
+    <script type="text/javascript">var track_count = <?php echo $file_count; ?>;</script>
+
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://rawgit.com/ngryman/jquery.finger/v0.1.2/dist/jquery.finger.js"></script>
