@@ -44,10 +44,6 @@ body, html {
 	transition: 1s ease;
 }
 
-#main_content:hover {
-	opacity: 1 !important;
-}
-
 #logo {
 	width: 250px;
 	max-width: 80%;
