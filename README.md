@@ -1,2 +1,2 @@
 # homepage
-A small, minimal personal homepage.
+A small and minimal personal homepage.
