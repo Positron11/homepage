@@ -5,6 +5,7 @@ var track_display_duration = "";
 var track_display_progress = "";
 var tracks_path = "Assets/Music/";
 var track = document.getElementById("track");
+var first_track = "Evelyn Stein - Quiet Resource.mp3";
 
 // Set press duration
 $.Finger = {
@@ -14,6 +15,10 @@ $.Finger = {
 $(function(){
 	// Shuffle library
 	shuffleArray(track_list);
+
+	// Set first track
+	track_list.splice(track_list.indexOf(first_track), 1);
+	track_list.unshift(first_track);
 
 	// Initialize track
 	$(track).attr("src", tracks_path + track_list[0]);
