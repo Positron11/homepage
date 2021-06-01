@@ -1,9 +1,15 @@
 // Initialize vars
+var tracks_path = "Assets/Music/";
+
 var track_index = 1;
 var track_info = [];
+
 var track_display_duration = "";
 var track_display_progress = "";
-var tracks_path = "Assets/Music/";
+
+var new_background_image = "";
+var current_background_image = "background";
+
 var track = document.getElementById("track");
 
 // Set press duration
@@ -31,8 +37,16 @@ $(function(){
 	});
 
     // When track...
-	$(track).bind("playing", function(){ // is playing
+	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").removeClass().addClass("fas fa-pause");
+		track_info = track_list[track_index - 1].replace(".mp3", "").split(" - ");
+		$("#track_artist").text(track_info[0]);
+		$("#track_title").text(track_info[1]);
+
+		// Change background gif if possible
+		new_background_image = $.inArray(track_info[0] + ".gif", image_list) != -1 ? track_info[0] : "background";
+		changeBackgroundImage(new_background_image);
+		current_background_image = new_background_image;
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").removeClass().addClass("fas fa-play");
@@ -56,10 +70,6 @@ $(function(){
 	$(track).bind("timeupdate", function(){
         track_display_progress = secondsToDisplayTime(track.currentTime);
         $("#track_progress").text(track_display_progress + " / " + track_display_duration);
-		track_info = track_list[track_index - 1].replace(".mp3", "").split(" - ");
-		$("#track_artist").text(track_info[0]);
-		$("#track_title").text(track_info[1]);
-
 	})
 
     // Autoplay
@@ -87,4 +97,14 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+// Change Background Image
+function changeBackgroundImage(filename) {
+	if (filename != current_background_image) {
+		$("#blinds").css("opacity", "1").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+			$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/' + filename + '.gif")');
+			$(this).css("opacity", "0");
+		});
+	}
 }
