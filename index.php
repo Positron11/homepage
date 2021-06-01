@@ -26,6 +26,7 @@
 <body>
 	<!-- Main container -->
 	<div id="page">
+		<div id="blinds"></div>
 		<div id="main">
 			<!-- Logo and name -->
 			<div id="main_content">
@@ -55,10 +56,11 @@
 	<audio id="track"></audio>
 
 
-	<!-- Get tracklist length -->
+	<!-- Backend variables -->
 	<?php $file_count = iterator_count(new FilesystemIterator('Assets/Music/', FilesystemIterator::SKIP_DOTS)); ?>
     <script type="text/javascript">var track_count = <?php echo $file_count; ?>;</script>
 	<script type="text/javascript">var track_list = <?php echo json_encode(array_slice(scandir('Assets/Music/'), 2)); ?>;</script>
+	<script type="text/javascript">var image_list = <?php echo json_encode(array_slice(scandir('Assets/Images/'), 2)); ?>;</script>
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
