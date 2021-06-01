@@ -14,6 +14,8 @@ var current_background_image = "background";
 
 var track = document.getElementById("track");
 
+var cheatcode_cache = "";
+
 // Set press duration
 $.Finger = {
 	pressDuration: 2000,
@@ -29,14 +31,16 @@ $(function(){
     // Initialize track durations
     track_display_duration = secondsToDisplayTime(track.duration);
     
-    // Activate music player
-	$("#logo").on("press", function() {
-		player_activated = true;
-		$("#track_info").css("opacity", "1");
-		$("#main_content").css("opacity", "0.7");
-        $("#main_content").css("transform", "scale(0.7)");
-		$("#player").css("transform", "translate(-50%, 0)");
-        track.play();
+    // Activate music player by logo
+	$("#logo").on("press", function() {activatePlayer();});
+
+	// Activate music player by keycode
+	$(document).keypress(function(event) {
+		cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "" ;
+		if (cheatcode_cache.indexOf("isakov") != -1) {
+			cheatcode_cache = ""; // Reset cache
+			activatePlayer();
+		}
 	});
 
     // When track...
@@ -97,6 +101,18 @@ $(function(){
 		switchTrack(track_index);
 	});
 }); 
+
+// Activate player
+function activatePlayer() {
+	if (!player_activated) {
+		player_activated = true;
+		$("#track_info").css("opacity", "1");
+		$("#main_content").css("opacity", "0.7");
+		$("#main_content").css("transform", "scale(0.7)");
+		$("#player").css("transform", "translate(-50%, 0)");
+		track.play();
+	}
+}
 
 // Switch tracks
 function switchTrack(track_index) {
