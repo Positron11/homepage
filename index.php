@@ -13,6 +13,23 @@
 	<meta name="author" content="Aarush Kumbhakern">
 	<meta name="description" content="Consider this a description of sorts.">
 
+	<!-- OG meta -->
+	<meta property="og:site_name" content="Aarush Kumbhakern">
+	<meta property="og:url" content="http://aarushkumbhakern.rf.gd/">
+
+	<!-- Twitter meta -->
+	<meta name="twitter:card" content="summary">
+
+	<!-- OG article meta tags -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Aarush Kumbhakern">
+	<meta property="og:article:author" content="Aarush Kumbhakern">
+	<meta property="og:description" content="Consider this a description of sorts.">
+	<meta property="og:image" content="Assets/Images/og_thumbnail.png">
+
+	<!-- Twitter article meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+
 	<!-- Google fonts and fontawesome -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
