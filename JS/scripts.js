@@ -34,10 +34,10 @@ $(function(){
 	// Initialize track
 	$(track).attr("src", tracks_path + track_list[0]);
 
-    // Initialize track durations
-    track_display_duration = secondsToDisplayTime(track.duration);
-    
-    // Activate music player by logo
+	// Initialize track durations
+	track_display_duration = secondsToDisplayTime(track.duration);
+	
+	// Activate music player by logo
 	$("#logo").on("press", function() {activatePlayer();});
 
 	// Activate music player by keycode
@@ -49,23 +49,23 @@ $(function(){
 		}
 	});
 
-    // When track...
+	// When track...
 	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").removeClass().addClass("fas fa-pause");
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").removeClass().addClass("fas fa-play");
 	});
-    $(track).bind("durationchange", function(){ // changes duration (when track changes, really)
+	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);
 	});
 
-    // Play/pause track
+	// Play/pause track
 	$("#play_pause").on("tap", function() {
 		$(this).hasClass("fa-play") ? track.play() : track.pause();
 	});
 	
-    // Navigate library
+	// Navigate library
 	$("#prev_track, #next_track").on("tap", function() {
 		this.id == "next_track" ? track_index >= track_count ? track_index = 1 : track_index++ : track_index <= 1 ? track_index = track_count : track_index--;
 		switchTrack(track_index);
@@ -87,13 +87,13 @@ $(function(){
 		}
 	});
 	
-    // Update progress and name display
+	// Update progress and name display
 	$(track).bind("timeupdate", function(){
-        track_display_progress = secondsToDisplayTime(track.currentTime);
-        $("#track_progress").text(track_display_progress + " / " + track_display_duration);
+		track_display_progress = secondsToDisplayTime(track.currentTime);
+		$("#track_progress").text(track_display_progress + " / " + track_display_duration);
 	})
 
-    // Autoplay
+	// Autoplay
 	$(track).bind("ended", function(){
 		track_index >= track_count ? track_index = 1 : track_index++;
 		switchTrack(track_index);
@@ -115,22 +115,22 @@ function activatePlayer() {
 
 // Switch tracks
 function switchTrack(track_index) {
-    $("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
-    $(track).attr("src", tracks_path + track_list[track_index - 1]);
+	$("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
+	$(track).attr("src", tracks_path + track_list[track_index - 1]);
 	track.pause(); track.load(); track.play();
 }
 
 // Convert seconds to readable string
 function secondsToDisplayTime(seconds) {
-    return String(parseInt(Math.round(seconds) / 60)) + ":" + String(Math.round(seconds) % 60).padStart(2, '0');
+	return String(parseInt(Math.round(seconds) / 60)) + ":" + String(Math.round(seconds) % 60).padStart(2, '0');
 }
 
 // Shuffle Array
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
 }
 
 // Get track info
