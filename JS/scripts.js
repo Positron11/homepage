@@ -52,14 +52,6 @@ $(function(){
     // When track...
 	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").removeClass().addClass("fas fa-pause");
-		track_info = track_list[track_index - 1].replace(".mp3", "").split(" - ");
-		$("#track_artist").text(track_info[0]);
-		$("#track_title").text(track_info[1]);
-
-		// Change background gif if possible
-		new_background_image = $.inArray(track_info[0] + ".gif", image_list) != -1 ? track_info[0] : "background";
-		changeBackgroundImage(new_background_image);
-		current_background_image = new_background_image;
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").removeClass().addClass("fas fa-play");
@@ -77,6 +69,7 @@ $(function(){
 	$("#prev_track, #next_track").on("tap", function() {
 		this.id == "next_track" ? track_index >= track_count ? track_index = 1 : track_index++ : track_index <= 1 ? track_index = track_count : track_index--;
 		switchTrack(track_index);
+		getTrackInfo();
 	});
 
 	// Keyboard input
@@ -85,12 +78,11 @@ $(function(){
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
 				$("#play_pause").hasClass("fa-play") ? track.play() : track.pause(); // Play/pause
-			} else if (keycode == '37') { // Left arrow
-				track_index <= 1 ? track_index = track_count : track_index--; // Previous track
+			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
+				if (keycode == '37'){track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
+				else {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
 				switchTrack(track_index);
-			} else if (keycode == '39') { // Right arrow
-				track_index >= track_count ? track_index = 1 : track_index++; // Next track
-				switchTrack(track_index);
+				getTrackInfo();
 			}
 		}
 	});
@@ -116,6 +108,7 @@ function activatePlayer() {
 		$("#main_content").css("opacity", "0.7");
 		$("#main_content").css("transform", "scale(0.7)");
 		$("#player").css("transform", "translate(-50%, 0)");
+		getTrackInfo();
 		track.play();
 	}
 }
@@ -138,6 +131,19 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+// Get track info
+function getTrackInfo() {
+	// Set track info display text
+	track_info = track_list[track_index - 1].replace(".mp3", "").split(" - ");
+	$("#track_artist").text(track_info[0]);
+	$("#track_title").text(track_info[1]);
+
+	// Change background gif if possible
+	new_background_image = $.inArray(track_info[0] + ".gif", image_list) != -1 ? track_info[0] : "background";
+	changeBackgroundImage(new_background_image);
+	current_background_image = new_background_image;
 }
 
 // Change Background Image
