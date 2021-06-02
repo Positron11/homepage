@@ -16,6 +16,12 @@ var track = document.getElementById("track");
 
 var cheatcode_cache = "";
 
+// Initialize blinds timeout
+var blinds_timeout = window.setTimeout(function() {
+	$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/' + filename + '.gif")');
+	$("#blinds").css("opacity", "0");
+}, 500);
+
 // Set press duration
 $.Finger = {
 	pressDuration: 2000,
@@ -137,9 +143,11 @@ function shuffleArray(array) {
 // Change Background Image
 function changeBackgroundImage(filename) {
 	if (filename != current_background_image) {
-		$("#blinds").css("opacity", "1").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function() {
+		$("#blinds").css("opacity", "1");
+		window.clearTimeout(blinds_timeout);
+		blinds_timeout = window.setTimeout(function() {
 			$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/' + filename + '.gif")');
-			$(this).css("opacity", "0");
-		});
+			$("#blinds").css("opacity", "0");
+		}, 500);
 	}
 }
