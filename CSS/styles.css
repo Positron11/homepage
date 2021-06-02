@@ -47,7 +47,7 @@ body, html {
 	background-size: cover;
 	justify-content: center;
 	background-position: center;
-	box-shadow: 0 0 3em 2em rgba(0,0,0,1) inset;
+	box-shadow: 0 0 3.5em 3em rgba(0,0,0,1) inset;
 	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/background.gif");
 }
 
