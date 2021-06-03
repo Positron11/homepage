@@ -25,7 +25,7 @@
 	<meta property="og:title" content="Aarush Kumbhakern">
 	<meta property="og:article:author" content="Aarush Kumbhakern">
 	<meta property="og:description" content="Consider this a description of sorts.">
-	<meta property="og:image" content="Assets/Images/og_thumbnail.png">
+	<meta property="og:image" content="http://aarushkumbhakern.rf.gd/Assets/Images/og_thumbnail.jpg">
 
 	<!-- Twitter article meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
