@@ -1,2 +1,2 @@
-# homepage
-A small and minimal personal homepage.
+# Homepage
+A simple homepage with a hidden feature.
