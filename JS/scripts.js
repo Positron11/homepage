@@ -97,6 +97,7 @@ $(function(){
 	$(track).bind("ended", function(){
 		track_index >= track_count ? track_index = 1 : track_index++;
 		switchTrack(track_index);
+		getTrackInfo();
 	});
 }); 
 
