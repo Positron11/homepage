@@ -52,9 +52,11 @@ $(function(){
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").removeClass().addClass("fas fa-pause");
+		$("#dimmer").css("opacity", "0");
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").removeClass().addClass("fas fa-play");
+		$("#dimmer").css("opacity", "0.8");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);

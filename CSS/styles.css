@@ -23,7 +23,7 @@ body, html {
 	background-color: black;
 }
 
-#blinds {
+#blinds, #dimmer {
 	top: 0;
 	left: 0;
 	right: 0;

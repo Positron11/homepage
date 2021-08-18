@@ -44,6 +44,7 @@
 	<!-- Main container -->
 	<div id="page">
 		<div id="blinds"></div>
+		<div id="dimmer"></div>
 		<div id="main">
 			<!-- Logo and name -->
 			<div id="main_content">
