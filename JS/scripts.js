@@ -22,11 +22,6 @@ var blinds_timeout = window.setTimeout(function() {
 	$("#blinds").css("opacity", "0");
 }, 500);
 
-// Set press duration
-$.Finger = {
-	pressDuration: 2000,
-};
-
 $(function(){
 	// Shuffle library
 	shuffleArray(track_list);
@@ -38,7 +33,7 @@ $(function(){
 	track_display_duration = secondsToDisplayTime(track.duration);
 	
 	// Activate music player by logo
-	$("#logo").on("press", function() {activatePlayer();});
+	$("#logo").on("longpress", function() {activatePlayer();});
 
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
@@ -63,12 +58,12 @@ $(function(){
 	});
 
 	// Play/pause track
-	$("#play_pause").on("tap", function() {
+	$("#play_pause").on("click", function() {
 		$(this).hasClass("fa-play") ? track.play() : track.pause();
 	});
 	
 	// Navigate library
-	$("#prev_track, #next_track").on("tap", function() {
+	$("#prev_track, #next_track").on("click", function() {
 		this.id == "next_track" ? track_index >= track_count ? track_index = 1 : track_index++ : track_index <= 1 ? track_index = track_count : track_index--;
 		switchTrack(track_index);
 		getTrackInfo();
