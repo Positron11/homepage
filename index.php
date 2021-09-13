@@ -82,7 +82,7 @@
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://rawgit.com/ngryman/jquery.finger/v0.1.2/dist/jquery.finger.js"></script>
+	<script src="JS/finger.js"></script>
 	<script src="JS/scripts.js"></script>
 </body>
 
