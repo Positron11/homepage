@@ -82,7 +82,8 @@
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="JS/finger.js"></script>
+	<script type="text/javascript">var longpress_config = {duration: 2000,};</script>
+	<script src="JS/longpress.js"></script>
 	<script src="JS/scripts.js"></script>
 </body>
 
