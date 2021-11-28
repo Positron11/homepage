@@ -19,7 +19,7 @@ var cheatcode_cache = "";
 // Initialize blinds timeout
 var blinds_timeout = window.setTimeout(function() {
 	$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url("../Assets/Images/' + filename + '.gif")');
-	$("#blinds").css("opacity", "0");
+	$("#blinds").removeClass("closed");
 }, 500);
 
 $(function(){
@@ -47,11 +47,11 @@ $(function(){
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").removeClass().addClass("fas fa-pause");
-		$("#dimmer").css("opacity", "0");
+		$("#dimmer").removeClass("active");
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").removeClass().addClass("fas fa-play");
-		$("#dimmer").css("opacity", "0.8");
+		$("#dimmer").addClass("active");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);
@@ -102,10 +102,8 @@ $(function(){
 function activatePlayer() {
 	if (!player_activated) {
 		player_activated = true;
-		$("#track_info").css("opacity", "1");
-		$("#main_content").css("opacity", "0.7");
-		$("#main_content").css("transform", "scale(0.7)");
-		$("#player").css("transform", "translate(-50%, 0)");
+		$("#track_info, #player").removeClass("hidden");
+		$("#main_content").addClass("player-active");
 		getTrackInfo();
 		track.play();
 	}
@@ -147,11 +145,11 @@ function getTrackInfo() {
 // Change Background Image
 function changeBackgroundImage(filename) {
 	if (filename != current_background_image) {
-		$("#blinds").css("opacity", "1");
+		$("#blinds").addClass("closed");
 		window.clearTimeout(blinds_timeout);
 		blinds_timeout = window.setTimeout(function() {
 			$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("../Assets/Images/' + filename + '.gif")');
-			$("#blinds").css("opacity", "0");
+			$("#blinds").removeClass("closed");
 		}, 500);
 	}
 }

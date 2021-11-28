@@ -53,13 +53,13 @@
 			</div>
 
 			<!-- Track info -->
-			<div id="track_info">
+			<div id="track_info" class="hidden">
 				<div id="track_artist"></div>
 				<div id="track_title"></div>
 			</div>
 			
 			<!-- Player -->
-			<div id="player">
+			<div id="player" class="hidden">
 				<div id="track_progress"></div>
 				<div id="player_controls">
 					<i id="prev_track" class="fas fa-step-backward song-nav" aria-hidden="true"></i>
