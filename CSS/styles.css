@@ -85,7 +85,7 @@ body, html {
 }
 
 #track_info {
-	top: 1em;
+	top: 2em;
 	left: 50%;
 	opacity: 0;
 	z-index: 2;
@@ -98,7 +98,7 @@ body, html {
 
 #track_artist {
 	font-style: italic;
-	margin-bottom: 0.3em;
+	margin-bottom: 0.5em;
 }
 
 #track_title::before, #track_title::after {
@@ -114,7 +114,7 @@ body, html {
 }
 
 #track_progress {
-	font-size: 0.9em;
+	font-size: 0.85em;
 	text-align: center;
 }
 
