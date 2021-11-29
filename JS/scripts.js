@@ -140,6 +140,9 @@ function getTrackInfo() {
 	new_background_image = $.inArray(track_info[0] + ".gif", image_list) != -1 ? track_info[0] : "background";
 	changeBackgroundImage(new_background_image);
 	current_background_image = new_background_image;
+
+	// Set page title
+	document.title = track_info[0] + " - " + track_info[1] + " | Aarush Kumbhakern";
 }
 
 // Change Background Image
