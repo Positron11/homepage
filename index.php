@@ -69,9 +69,9 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Hint -->
-	<div id="hint"></div>
+	<div id="hint" class="hidden">Type "<span id="cheatcode"></span>" to enter.</div>
 	
 	<!-- Audio -->
 	<audio id="track"></audio>

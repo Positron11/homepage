@@ -95,27 +95,30 @@ body, html {
 	left: 0;
 	right: 0;
 	bottom: 1em;
-	opacity: 0.5;
 	position: fixed;
+	color: #6d6d6d;
 	font-size: 0.75em;
 	text-align: center;
-	animation: flicker 10s ease infinite;
+	transition: 0.5s ease-out;
 }
 
-@keyframes flicker {
-	0% { opacity: 0.1; }
-	2% { opacity: 0.5; }
-	8% { opacity: 0.1; }
-	9% { opacity: 0.5; }
-	12% { opacity: 0.1; }
-	20% { opacity: 0.5; }
-	25% { opacity: 0.3; }
-	30% { opacity: 0.5; }
-	70% { opacity: 0.3; }
-	72% { opacity: 0.2; }
-	77% { opacity: 0.4; }
-	100% { opacity: 0.1; }
-  }
+#hint.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#cheatcode {
+	text-transform: capitalize;
+}
+
+#cheatcode::before {
+	color: white;
+	content: attr(data-before);
+}
+
+#cheatcode::after {
+	content: attr(data-after);
+}
 
 
 /* MUSIC PLAYER */

@@ -14,6 +14,7 @@ var current_background_image = "background";
 
 var track = document.getElementById("track");
 
+var cheatcode = "isakov";
 var cheatcode_cache = "";
 
 // Initialize blinds timeout
@@ -23,7 +24,15 @@ var blinds_timeout = window.setTimeout(function() {
 }, 500);
 
 $(function(){
-	$("#hint").text(isMobile() ? "Press and hold logo to enter." : 'Type "Isakov" to enter.');
+	// Set hint text
+	if (isMobile()) {
+		$("#hint").html("Press and hold logo to enter.");
+	} else {
+		$("#cheatcode").attr("data-after", "Isakov");
+	}
+
+	// Show hint
+	$("#hint").removeClass("hidden");
 
 	// Shuffle library
 	shuffleArray(track_list);
@@ -39,11 +48,11 @@ $(function(){
 
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
-		cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "" ;
-		if (cheatcode_cache.indexOf("isakov") != -1) {
-			cheatcode_cache = ""; // Reset cache
-			activatePlayer();
-		}
+		cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "";
+		for (let i = 0; i < cheatcode_cache.length; i++) { if (cheatcode_cache[i] != cheatcode[i]) { cheatcode_cache = ""; } }
+		$("#cheatcode").attr("data-before", cheatcode_cache);
+		$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
+		if (cheatcode_cache == "isakov") { activatePlayer(); }
 	});
 
 	// When track...
@@ -106,6 +115,7 @@ function activatePlayer() {
 		player_activated = true;
 		$("#track_info, #player").removeClass("hidden");
 		$("#main_content").addClass("player-active");
+		$("#hint").addClass("hidden");
 		getTrackInfo();
 		track.play();
 	}
@@ -158,7 +168,6 @@ function changeBackgroundImage(filename) {
 		}, 500);
 	}
 }
-
 
 // Detect mobile device 
 function isMobile() { 
