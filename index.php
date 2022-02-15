@@ -70,6 +70,9 @@
 		</div>
 	</div>
 	
+	<!-- Hint -->
+	<div id="hint"></div>
+	
 	<!-- Audio -->
 	<audio id="track"></audio>
 

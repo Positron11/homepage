@@ -23,6 +23,8 @@ var blinds_timeout = window.setTimeout(function() {
 }, 500);
 
 $(function(){
+	$("#hint").text(isMobile() ? "Press and hold logo to enter." : 'Type "Isakov" to enter.');
+
 	// Shuffle library
 	shuffleArray(track_list);
 
@@ -155,4 +157,10 @@ function changeBackgroundImage(filename) {
 			$("#blinds").removeClass("closed");
 		}, 500);
 	}
+}
+
+
+// Detect mobile device 
+function isMobile() { 
+	return ('ontouchstart' in document.documentElement); 
 }
