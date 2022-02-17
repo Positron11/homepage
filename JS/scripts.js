@@ -52,7 +52,10 @@ $(function(){
 		for (let i = 0; i < cheatcode_cache.length; i++) { if (cheatcode_cache[i] != cheatcode[i]) { cheatcode_cache = ""; } }
 		$("#cheatcode").attr("data-before", cheatcode_cache);
 		$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
-		if (cheatcode_cache == "isakov") { activatePlayer(); }
+		if (cheatcode_cache == "isakov") { 
+			$("#main_content").addClass("key-activated");
+			activatePlayer(); 
+		}
 	});
 
 	// When track...
