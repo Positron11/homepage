@@ -21,6 +21,7 @@ body, html {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
 }
 
 #feature {
@@ -125,14 +126,16 @@ body, html {
 #player_controls {
 	left: 50%;
 	z-index: 2;
+	opacity: 0;
 	bottom: 1.5em;
 	position: absolute;
-	transform: translate(-50%, 150%);
+	transform: translate(-50%, 100%);
 	text-shadow: 2px 2px 4px black;
-	transition: transform 0.9s ease;
+	transition: transform 1s ease, opacity 3s ease;
 }
 
 #feature.player-active #player_controls {
+	opacity: 1;
 	transform: translate(-50%, 0%);
 }
 
