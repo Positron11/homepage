@@ -55,9 +55,9 @@
 					<div id="name">Aarush Kumbhakern</div>
 
 					<div id="navigation">
-						<div class="navigation-link"><a href="#">About</a></div>
-						<div class="navigation-link"><a href="#">Projects</a></div>
+						<div class="navigation-link"><a href="https://open.spotify.com/user/8czit3cyg2ngnoft5mkpm7fbb" target="_blank" rel="noopener noreferrer">Spotify</a></div>
 						<div class="navigation-link"><a href="https://github.com/Positron11/" target="_blank" rel="noopener noreferrer">Github</a></div>
+						<div class="navigation-link"><a href="https://in.linkedin.com/in/aarush-kumbhakern" target="_blank" rel="noopener noreferrer">Linkedin</a></div>
 					</div>
 				</div>
 
