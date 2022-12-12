@@ -19,7 +19,6 @@ var cheatcode_cache = "";
 
 // Initialize blinds timeout
 var blinds_timeout = window.setTimeout(function() {
-	$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url("Assets/Images/Covers/' + filename + '.gif")');
 	$("#blinds").removeClass("closed");
 }, 500);
 
