@@ -127,9 +127,9 @@ body, html {
 	z-index: 2;
 	bottom: 1.5em;
 	position: absolute;
-	transform: translate(-50%, 125%);
+	transform: translate(-50%, 150%);
 	text-shadow: 2px 2px 4px black;
-	transition: transform 0.8s ease;
+	transition: transform 0.9s ease;
 }
 
 #feature.player-active #player_controls {

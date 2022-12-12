@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="390px" height="390px" viewBox="0 0 390 390" version="1.2">
+<g id="surface133559">
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20 100 L 20 280 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 360 100 L 360 280 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 100 20 L 280 20 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 100 360 L 280 360 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 20 280 C 20 280 20 360 100 360 Z M 20 280 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20 280 C 20 280 20 360 100 360 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 280 360 C 280 360 360 360 360 280 Z M 280 360 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 280 360 C 280 360 360 360 360 280 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 280 20 C 280 20 360 20 360 100 Z M 280 20 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 280 20 C 280 20 360 20 360 100 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 20 100 C 20 100 20 20 100 20 Z M 20 100 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20 100 C 20 100 20 20 100 20 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 20 280 L 100 360 L 280 360 L 360 280 L 360 100 L 280 20 L 100 20 L 20 100 Z M 20 280 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20 280 L 100 360 L 280 360 L 360 280 L 360 100 L 280 20 L 100 20 L 20 100 L 20 280 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 160 60 L 220 60 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 160 320 L 220 320 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 180 60 L 180 320 L 200 320 L 200 60 Z M 180 60 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 180 60 L 180 320 L 200 320 L 200 60 L 180 60 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 280 80 L 320 80 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 200 180 L 300 80 Z M 200 180 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 200 180 L 300 80 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 80 L 100 80 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 300 L 100 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 280 300 L 320 300 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 180 180 L 80 80 Z M 180 180 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 180 180 L 80 80 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 100 300 L 160 160 L 140 140 L 80 300 Z M 100 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 100 300 L 160 160 L 140 140 L 80 300 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 280 300 L 220 160 L 240 140 L 300 300 Z M 280 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 280 300 L 220 160 L 240 140 L 300 300 L 280 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 120 240 L 180 240 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 60 80 L 100 100 L 100 80 Z M 60 80 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 80 L 100 100 L 100 80 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 320 80 L 280 100 L 280 80 Z M 320 80 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 320 80 L 280 100 L 280 80 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 60 300 L 100 280 L 100 300 Z M 60 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 60 300 L 100 280 L 100 300 L 60 300 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 320 300 L 280 280 L 280 300 Z M 320 300 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 320 300 L 280 280 L 280 300 L 320 300 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 160 320 L 180 300 L 200 300 L 220 320 Z M 160 320 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 160 320 L 180 300 L 200 300 L 220 320 L 160 320 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 160 60 L 180 80 L 200 80 L 220 60 Z M 160 60 "/>
+<path style="fill:none;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 160 60 L 180 80 L 200 80 L 220 60 L 160 60 "/>
+</g>
+</svg>
