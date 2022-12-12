@@ -156,7 +156,7 @@ function getTrackInfo() {
 	current_background_image = new_background_image;
 
 	// Set page title
-	document.title = track_info[0] + " - " + track_info[1] + " | Aarush Kumbhakern";
+	document.title = track_info[0] + " · " + track_info[1];
 }
 
 // Change Background Image
