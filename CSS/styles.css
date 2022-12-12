@@ -39,14 +39,14 @@ body, html {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../Assets/Images/Main/background.gif");
 }
 
-#feature_hero {
+#feature_content {
 	z-index: 2;
 	text-align: center;
 	transition: 1s ease;
 }
 
-#feature.player-active #feature_hero {
-	transform: scale(0.75) translateY(0.5em);
+#feature.player-active #feature_content {
+	transform: scale(0.75);
 }
 
 #feature_logo {
