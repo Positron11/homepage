@@ -7,7 +7,7 @@
 	<!-- Page meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/png" href="Assets/Images/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="Assets/Images/Main/favicon.png">
 	
 	<!-- Description meta -->
 	<meta name="author" content="Aarush Kumbhakern">
@@ -25,7 +25,7 @@
 	<meta property="og:title" content="Aarush Kumbhakern">
 	<meta property="og:article:author" content="Aarush Kumbhakern">
 	<meta property="og:description" content="Consider this a description of sorts.">
-	<meta property="og:image" content="http://aarushkumbhakern.rf.gd/Assets/Images/og_thumbnail.jpg">
+	<meta property="og:image" content="http://aarushkumbhakern.rf.gd/Assets/Images/Main/og_thumbnail.png">
 
 	<!-- Twitter article meta tags -->
 	<meta name="twitter:card" content="summary_large_image">

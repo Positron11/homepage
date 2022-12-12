@@ -56,7 +56,7 @@ body, html {
 	justify-content: center;
 	background-position: center;
 	box-shadow: 0 0 5em 4em rgba(0, 0, 0, 1) inset;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../Assets/Images/background.gif");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../Assets/Images/Main/background.gif");
 }
 
 #main_content {
