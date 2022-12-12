@@ -87,7 +87,7 @@ $(function(){
 		if (player_activated) {
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
-				$(this).attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause(); // Play/pause
+				$("#play_pause").attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause(); // Play/pause
 			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
 				if (keycode == '37'){track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
 				else {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
