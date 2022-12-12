@@ -196,6 +196,7 @@ body, html {
 	bottom: 1em;
 	position: fixed;
 	font-size: 0.75em;
+	text-align: center;
 	transform: translateX(-50%);
 	transition: opacity 0.5s ease-out;
 }
@@ -250,7 +251,7 @@ body, html {
 		font-size: 0.85em;
 	}
 	#hint {
-		font-size: 0.7em;
+		font-size: 0.6em;
 	}
 }
 
