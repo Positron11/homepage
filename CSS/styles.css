@@ -163,6 +163,29 @@ body, html {
 }
 
 
+/* NAVIGATION */
+
+#navigation {
+	display: flex;
+	margin-top: 1em;
+	column-gap: 0.5em;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#navigation .navigation-link a {
+	color: inherit;
+	text-shadow: 2px 2px 4px black;
+	text-decoration: underline rgba(255,255,255,0);
+	transition: text-decoration 0.3s ease;
+}
+
+#navigation .navigation-link:not(:last-child)::after {
+	content: "·";
+	margin-left: 0.5em;
+}
+
+
 /* HINT */
 
 #hint {
@@ -197,12 +220,25 @@ body, html {
 }
 
 
+/* DEVICE-SPECIFIC EVENTS */
+
+@media (pointer:fine) {
+	#navigation .navigation-link:hover a {
+		text-decoration: underline rgba(255,255,255,1);
+	}
+}
+
+
 /* BREAKPOINTS */
 
 @media only screen and (max-width: 680px) {
 	#name {
 		font-size: 8.2vw;
 		margin-top: 3vw;
+	}
+	#navigation {
+		margin-top: 0.9em;
+		font-size: 0.85em;
 	}
 	#hint {
 		font-size: 0.7em;
