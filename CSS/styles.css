@@ -228,6 +228,12 @@ body, html {
 	}
 }
 
+@media (pointer:coarse) {
+	#player_controls_buttons {
+		column-gap: 0.4em;
+	}
+}
+
 
 /* BREAKPOINTS */
 
