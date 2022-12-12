@@ -71,7 +71,7 @@
 	</div>
 
 	<!-- Hint -->
-	<div id="hint" class="hidden">Type "<span id="cheatcode"></span>" to enter.</div>
+	<div id="hint" class="hidden"><span>Type "</span><span id="cheatcode"></span><span>" to activate player.</span></div>
 	
 	<!-- Audio -->
 	<audio id="track"></audio>
