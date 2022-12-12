@@ -25,7 +25,7 @@ var blinds_timeout = window.setTimeout(function() {
 $(function(){
 	// Set hint text
 	if (isMobile()) {
-		$("#hint").html("Press and hold logo to enter.");
+		$("#hint").html("<span>Press and hold logo to activate player.</span>");
 	} else {
 		$("#cheatcode").attr("data-after", "Isakov");
 	}
@@ -43,7 +43,7 @@ $(function(){
 	track_display_duration = secondsToDisplayTime(track.duration);
 	
 	// Activate music player by logo
-	$("#logo").on("longpress", function() {activatePlayer();});
+	$("#feature_logo").on("longpress", function() {activatePlayer();});
 
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
@@ -52,18 +52,18 @@ $(function(){
 		$("#cheatcode").attr("data-before", cheatcode_cache);
 		$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
 		if (cheatcode_cache == "isakov") { 
-			$("#main_content").addClass("key-activated");
+			$("#feature").addClass("key-activated");
 			activatePlayer(); 
 		}
 	});
 
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
-		$("#play_pause").removeClass().addClass("fas fa-pause");
+		$("#play_pause").attr("src", "Assets/Images/Main/pause.svg");
 		$("#dimmer").removeClass("active");
 	});
 	$(track).bind("pause", function(){ // is paused
-		$("#play_pause").removeClass().addClass("fas fa-play");
+		$("#play_pause").attr("src", "Assets/Images/Main/play.svg");
 		$("#dimmer").addClass("active");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
@@ -72,7 +72,7 @@ $(function(){
 
 	// Play/pause track
 	$("#play_pause").on("click", function() {
-		$(this).hasClass("fa-play") ? track.play() : track.pause();
+		$(this).attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause();
 	});
 	
 	// Navigate library
@@ -87,7 +87,7 @@ $(function(){
 		if (player_activated) {
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
-				$("#play_pause").hasClass("fa-play") ? track.play() : track.pause(); // Play/pause
+				$(this).attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause(); // Play/pause
 			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
 				if (keycode == '37'){track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
 				else {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
@@ -115,9 +115,7 @@ $(function(){
 function activatePlayer() {
 	if (!player_activated) {
 		player_activated = true;
-		$("#track_info, #player").removeClass("hidden");
-		$("#main_content").addClass("player-active");
-		$("#hint").addClass("hidden");
+		$("#feature").addClass("player-active");
 		getTrackInfo();
 		track.play();
 	}
@@ -125,7 +123,7 @@ function activatePlayer() {
 
 // Switch tracks
 function switchTrack(track_index) {
-	$("#play_pause").removeClass().addClass("fas fa-spinner fa-pulse");
+	$("#play_pause").attr("src", "Assets/Images/Main/loading.svg");
 	$(track).attr("src", tracks_path + track_list[track_index - 1]);
 	track.pause(); track.load(); track.play();
 }
@@ -165,7 +163,7 @@ function changeBackgroundImage(filename) {
 		$("#blinds").addClass("closed");
 		window.clearTimeout(blinds_timeout);
 		blinds_timeout = window.setTimeout(function() {
-			$("#main").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("Assets/Images/Covers/' + filename + '.gif")');
+			$("#feature").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("Assets/Images/Covers/' + filename + '.gif")');
 			$("#blinds").removeClass("closed");
 		}, 500);
 	}
