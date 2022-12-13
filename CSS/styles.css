@@ -72,6 +72,34 @@ body, html {
 }
 
 
+/* NAVIGATION */
+
+#navigation {
+	display: flex;
+	margin-top: 1em;
+	column-gap: 0.5em;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#navigation .navigation-link a {
+	color: inherit;
+	display: inline-block;
+	text-shadow: 2px 2px 4px black;
+	text-decoration: underline rgba(255,255,255,0);
+	transition: text-decoration 0.3s ease, transform 0.1s ease;
+}
+
+#navigation .navigation-link a:active {
+	transform: scale(0.9);
+}
+
+#navigation .navigation-link:not(:last-child)::after {
+	content: "·";
+	margin-left: 0.5em;
+}
+
+
 /* BLINDS AND DIMMER */
 
 #blinds, #dimmer {
@@ -131,7 +159,7 @@ body, html {
 	position: absolute;
 	transform: translate(-50%, 100%);
 	text-shadow: 2px 2px 4px black;
-	transition: transform 1s ease, opacity 3s ease;
+	transition: transform 1s ease, opacity 2.5s ease;
 }
 
 #feature.player-active #player_controls {
@@ -163,29 +191,6 @@ body, html {
 
 #player_controls_buttons>*:active {
 	color: #a1a1a1;
-}
-
-
-/* NAVIGATION */
-
-#navigation {
-	display: flex;
-	margin-top: 1em;
-	column-gap: 0.5em;
-	flex-direction: row;
-	justify-content: center;
-}
-
-#navigation .navigation-link a {
-	color: inherit;
-	text-shadow: 2px 2px 4px black;
-	text-decoration: underline rgba(255,255,255,0);
-	transition: text-decoration 0.3s ease;
-}
-
-#navigation .navigation-link:not(:last-child)::after {
-	content: "·";
-	margin-left: 0.5em;
 }
 
 
