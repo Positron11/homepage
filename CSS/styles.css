@@ -222,6 +222,7 @@ body, html {
 #cheatcode::before {
 	opacity: 1;
 	content: attr(data-before);
+	text-shadow: 0 0 10px white;
 }
 
 #cheatcode::after {
