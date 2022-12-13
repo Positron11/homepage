@@ -60,11 +60,11 @@ $(function(){
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
 		$("#play_pause").attr("src", "Assets/Images/Main/pause.svg");
-		$("#dimmer").removeClass("active");
+		$("#feature").removeClass("player-paused").addClass("player-playing");
 	});
 	$(track).bind("pause", function(){ // is paused
 		$("#play_pause").attr("src", "Assets/Images/Main/play.svg");
-		$("#dimmer").addClass("active");
+		$("#feature").removeClass("player-playing").addClass("player-paused");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);
@@ -72,7 +72,7 @@ $(function(){
 
 	// Play/pause track
 	$("#play_pause").on("click", function() {
-		$(this).attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause();
+		togglePlayPause();
 	});
 	
 	// Navigate library
@@ -87,7 +87,7 @@ $(function(){
 		if (player_activated) {
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
-				$("#play_pause").attr("src") == "Assets/Images/Main/play.svg" ? track.play() : track.pause(); // Play/pause
+				togglePlayPause();// Play/pause
 			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
 				if (keycode == '37'){track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
 				else {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
@@ -119,6 +119,11 @@ function activatePlayer() {
 		getTrackInfo();
 		track.play();
 	}
+}
+
+// Toggle play/pause
+function togglePlayPause() {
+	$("#feature").hasClass("player-paused") ? track.play() : track.pause();
 }
 
 // Switch tracks
