@@ -13,6 +13,19 @@ body, html {
 }
 
 
+/* CONTENT STYLES */
+
+p {
+	line-height: 1.7em;
+	text-align: justify;
+}
+
+.heading {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+
 /* FEATURE */
 
 #feature_container {
@@ -25,7 +38,7 @@ body, html {
 
 #feature {
 	width: 800px;
-	height: 650px;
+	height: 700px;
 	display: flex;
 	max-width: 100%;
 	max-height: 100%;
@@ -41,6 +54,8 @@ body, html {
 
 #feature_content_container {
 	flex: 1 1 0;
+	overflow: hidden;
+	margin: 2em 0 1.5em 0;
 }
 
 
@@ -50,6 +65,11 @@ body, html {
 	z-index: 2;
 	height: 100%;
 	position: relative;
+	transition: height 1s ease;
+}
+
+#feature.content-mode #feature_hero_container {
+	height: 20%;
 }
 
 #feature_hero {
@@ -62,27 +82,28 @@ body, html {
 	transition: transform 1s ease;
 }
 
-#feature.player-active #feature_hero {
+#feature.player-active #feature_hero, 
+#feature.content-mode #feature_hero {
 	transform: scale(0.75);
 }
 
-#feature_logo {
+#hero_logo {
 	width: 11em;
-	max-width: 40%;
 	filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.7));
 	transition: filter 2s ease-in;
 }
 
-#feature_logo:active:not(#feature.player-active #feature_logo) {
+#hero_logo:active:not(#feature.player-active #hero_logo) {
 	filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.7));
 }
 
-#feature.key-activated.player-active #feature_logo {
+#feature.key-activated.player-active #hero_logo {
 	animation: flash 1s ease;
 }
 
-#name {
+#hero_name {
 	font-size: 2.8em;
+	text-align: center;
 	text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
@@ -114,6 +135,52 @@ body, html {
 }
 
 
+/* FEATURE CONTENT */
+
+#feature_content_wrapper {
+	z-index: 2;
+	height: 70%;
+	display: flex;
+	position: relative;
+	align-items: stretch;
+	justify-content: center;
+}
+
+#feature.content-mode #feature_content_wrapper::before {
+	left: 50%;
+	top: 1.5em;
+	font-size: 1.2em;
+	content: "· · ·";
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+#feature_content {
+	width: 75%;
+	margin-top: 5em;
+	max-width: 500px;
+	overflow-y: auto;
+	padding-bottom: 1em;
+	scrollbar-width: none;
+	text-shadow: 2px 2px 4px black;
+	mask-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.7) 95%, rgba(0,0,0,0) 100%);
+}
+
+#feature_content::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+#content_scroll_indicator {
+	left: 50%;
+	bottom: -1em;
+	opacity: 0.8;
+	width: 1.25em;
+	position: absolute;
+	animation: bounce 2s ease infinite;
+}
+
+
 /* BLINDS AND DIMMER */
 
 #blinds, #dimmer {
@@ -132,6 +199,10 @@ body, html {
 	opacity: 1;
 }
 
+#feature.content-mode #dimmer {
+	opacity: 0.4;
+}
+
 #feature.player-paused #dimmer {
 	opacity: 0.8;
 }
@@ -147,7 +218,7 @@ body, html {
 	position: relative;
 	text-align: center;
 	text-shadow: 2px 2px 4px black;
-	transition: opacity 2s ease;
+	transition: opacity 2s ease, filter 0.5s ease;
 }
 
 #feature.player-active #track_info {
@@ -169,7 +240,7 @@ body, html {
 #player_controls>* {
 	opacity: 0;
 	transform: translateY(100%);
-	transition: transform 1s ease, opacity 2.5s ease;
+	transition: transform 1s ease, opacity 2.5s ease, filter 0.5s ease;
 }
 
 #feature.player-active #player_controls>* {
@@ -199,6 +270,12 @@ body, html {
 	cursor: pointer;
 }
 
+#feature.content-mode.player-paused #track_info,
+#feature.content-mode.player-paused #player_controls {
+	filter: brightness(0.35);
+}
+
+
 
 /* HINT */
 
@@ -218,7 +295,6 @@ body, html {
 
 #feature.player-active #hint {
 	opacity: 0;
-	pointer-events: none;
 }
 
 #cheatcode {
@@ -258,11 +334,23 @@ body, html {
 	#feature_hero{
 		row-gap: 0.9em;
 	}
-	#name {
-		font-size: 8.2vw;
+	#hero_logo {
+		width: 126px;
+	}
+	#hero_name {
+		font-size: 2em;
 	}
 	#navigation {
 		font-size: 0.85em;
+	}
+	#feature_content_wrapper {
+		font-size: 0.85em;
+	}
+	#feature.content-mode #feature_content_wrapper::before {
+		top: 0.8em;
+	}
+	#feature_content {
+		margin-top: 4em;
 	}
 	#hint {
 		font-size: 0.6em;
@@ -276,4 +364,10 @@ body, html {
 	0% { filter: none; }
 	30% { filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.7)); }
 	100% { filter: none; }
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
+	40% {transform: translate(-50%, -0.4em);}
+	60% {transform: translate(-50%, -0.3em);}
 }

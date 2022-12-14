@@ -43,7 +43,7 @@ $(function(){
 	track_display_duration = secondsToDisplayTime(track.duration);
 	
 	// Activate music player by logo
-	$("#feature_logo").on("longpress", function() {activatePlayer();});
+	$("#hero_logo").on("longpress", function() {activatePlayer();});
 
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
