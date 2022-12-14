@@ -54,6 +54,15 @@ $(function(){
 			$("#hero_logo").show();
 		}
 	});
+
+	// Show/hide scroll indicator 
+	$("#feature_content").on("scroll", function() {
+		if (($(this)[0].scrollHeight - $(this).scrollTop()) - $(this).outerHeight() < 20) {
+			$("#content_scroll_indicator").addClass("hidden");
+		} else {
+			$("#content_scroll_indicator").removeClass("hidden");;
+		}
+	});
 	
 	// Activate music player by logo
 	$("#hero_logo").on("longpress", function() {activatePlayer();});
