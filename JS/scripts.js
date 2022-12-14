@@ -110,9 +110,15 @@ $(function(){
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
 				togglePlayPause();// Play/pause
+				replayAnimation("#play_pause_keyboard_shortcut_hint", "key-flash 0.3s ease");
 			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
-				if (keycode == '37'){track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
-				else {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
+				if (keycode == '37') { 
+					track_index <= 1 ? track_index = track_count : track_index--; // Previous track
+					replayAnimation("#prev_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
+				} else { 
+					track_index >= track_count ? track_index = 1 : track_index++; // Next track
+					replayAnimation("#next_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
+				}
 				switchTrack(track_index);
 				getTrackInfo();
 			}
@@ -132,6 +138,13 @@ $(function(){
 		getTrackInfo();
 	});
 }); 
+
+// Replay animation
+function replayAnimation(element, animation) {
+	$(element).css("animation", animation).on("animationend webkitAnimationEnd", function() {
+		$(this).css("animation", "none");
+	});
+}
 
 // Activate player
 function activatePlayer() {

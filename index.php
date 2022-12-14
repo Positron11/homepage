@@ -104,9 +104,9 @@
 					</div>
 
 					<div id="keyboard_shortcut_hints">
-						<img src="Assets/Images/Main/left_arrow_key.svg">
-						<img src="Assets/Images/Main/spacebar.svg">
-						<img src="Assets/Images/Main/right_arrow_key.svg">
+						<img id="prev_track_keyboard_shortcut_hint" src="Assets/Images/Main/left_arrow_key.svg">
+						<img id="play_pause_keyboard_shortcut_hint" src="Assets/Images/Main/spacebar.svg">
+						<img id="next_track_keyboard_shortcut_hint" src="Assets/Images/Main/right_arrow_key.svg">
 					</div>
 				</div>
 				
