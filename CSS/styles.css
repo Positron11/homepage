@@ -271,6 +271,10 @@ p {
 }
 
 #player_controls_buttons .player-controls-button {
+	position: relative;
+}
+
+#player_controls_buttons .player-controls-button img {
 	width: 21px;
 	height: 21px;
 	opacity: 0.8;
@@ -330,6 +334,33 @@ p {
 	#navigation .navigation-link:hover a {
 		text-shadow: 0 0 10px rgba(255,255,255,0.7);
 		text-decoration: underline rgba(238,238,238,1);
+	}
+
+	#player_controls_buttons .player-controls-button::after {
+		top: 1.6em;
+		content: "";
+		width: 25px;
+		height: 25px;
+		opacity: 0.2;
+		position: absolute;
+		background-size: cover;
+		background-position: center;
+	}
+
+	#play_pause::after {
+		left: 50%;
+		transform: translateX(-50%);
+		background-image: url("../Assets/Images/Main/spacebar.svg");
+	}
+	
+	#next_track::after {
+		left: 0%;
+		background-image: url("../Assets/Images/Main/right_arrow_key.svg");
+	}
+	
+	#prev_track::after {
+		right: 0%;
+		background-image: url("../Assets/Images/Main/left_arrow_key.svg");
 	}
 }
 

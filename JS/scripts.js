@@ -72,11 +72,11 @@ $(function(){
 
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
-		$("#play_pause").attr("src", "Assets/Images/Main/pause.svg");
+		$("#play_pause img").attr("src", "Assets/Images/Main/pause.svg");
 		$("#feature").removeClass("player-paused").addClass("player-playing");
 	});
 	$(track).bind("pause", function(){ // is paused
-		$("#play_pause").attr("src", "Assets/Images/Main/play.svg");
+		$("#play_pause img").attr("src", "Assets/Images/Main/play.svg");
 		$("#feature").removeClass("player-playing").addClass("player-paused");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)

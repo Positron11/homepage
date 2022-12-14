@@ -97,9 +97,9 @@
 				<div id="player_controls">
 					<div id="track_progress">0:00 / 0:00</div>
 					<div id="player_controls_buttons">
-						<img id="prev_track" class="player-controls-button" src="Assets/Images/Main/prev_track.svg">
-						<img id="play_pause" class="player-controls-button" src="Assets/Images/Main/play.svg">
-						<img id="next_track" class="player-controls-button" src="Assets/Images/Main/next_track.svg">
+						<div id="prev_track" class="player-controls-button"><img src="Assets/Images/Main/prev_track.svg"></div>
+						<div id="play_pause" class="player-controls-button"><img src="Assets/Images/Main/play.svg"></div>
+						<div id="next_track" class="player-controls-button"><img src="Assets/Images/Main/next_track.svg"></div>
 					</div>
 				</div>
 				
