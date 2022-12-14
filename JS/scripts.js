@@ -41,6 +41,19 @@ $(function(){
 
 	// Initialize track durations
 	track_display_duration = secondsToDisplayTime(track.duration);
+
+	// Show/hide content
+	$("#content_button").on("click", function() {
+		if ($(this).text() == "View Content") {
+			$(this).text("Hide Content");
+			$("#feature").addClass("content-mode"); 
+			$("#hero_logo").hide("slow");
+		} else {
+			$(this).text("View Content");
+			$("#feature").removeClass("content-mode"); 
+			$("#hero_logo").show();
+		}
+	});
 	
 	// Activate music player by logo
 	$("#hero_logo").on("longpress", function() {activatePlayer();});

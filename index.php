@@ -65,7 +65,7 @@
 							
 							<div id="navigation">
 								<div class="navigation-link">
-									<a href="#" rel="noopener noreferrer" onclick="$('#feature').addClass('content-mode'); $('#hero_logo').hide('slow');">Enter Site</a>
+									<a href="#" rel="noopener noreferrer" id="content_button">View Content</a>
 								</div>
 								<div class="navigation-link">
 									<a href="https://open.spotify.com/user/8czit3cyg2ngnoft5mkpm7fbb" target="_blank" rel="noopener noreferrer">Spotify</a>
