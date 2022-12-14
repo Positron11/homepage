@@ -164,6 +164,7 @@ p {
 	scrollbar-width: none;
 	text-shadow: 2px 2px 4px black;
 	mask-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.7) 95%, rgba(0,0,0,0) 100%);
+	-webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0.7) 95%, rgba(0,0,0,0) 100%);
 }
 
 #feature_content::-webkit-scrollbar {
