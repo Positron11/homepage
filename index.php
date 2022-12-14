@@ -96,10 +96,17 @@
 				<!-- Player -->
 				<div id="player_controls">
 					<div id="track_progress">0:00 / 0:00</div>
+
 					<div id="player_controls_buttons">
 						<div id="prev_track" class="player-controls-button"><img src="Assets/Images/Main/prev_track.svg"></div>
 						<div id="play_pause" class="player-controls-button"><img src="Assets/Images/Main/play.svg"></div>
 						<div id="next_track" class="player-controls-button"><img src="Assets/Images/Main/next_track.svg"></div>
+					</div>
+
+					<div id="keyboard_shortcut_hints">
+						<img src="Assets/Images/Main/left_arrow_key.svg">
+						<img src="Assets/Images/Main/spacebar.svg">
+						<img src="Assets/Images/Main/right_arrow_key.svg">
 					</div>
 				</div>
 				
