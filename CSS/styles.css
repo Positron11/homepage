@@ -308,6 +308,7 @@ p {
 
 #hint {
 	left: 50%;
+	z-index: 1;
 	bottom: 1em;
 	position: fixed;
 	font-size: 0.75em;
