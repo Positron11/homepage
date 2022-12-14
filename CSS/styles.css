@@ -237,7 +237,12 @@ p {
 	z-index: 2;
 	flex: 0 0 50px;
 	position: relative;
+	pointer-events: none;
 	transition: filter 0.5s ease;
+}
+
+#feature.player-active #player_controls {
+	pointer-events: all;
 }
 
 #player_controls>* {
