@@ -376,6 +376,7 @@ p {
 
 @media only screen and (max-width: 680px) {
 	#feature {
+		height: 600px;
 		padding: 1.5em 0;
 	}
 	#feature_hero{
