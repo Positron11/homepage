@@ -60,7 +60,7 @@ p {
 #feature_content_container {
 	flex: 1 1 0;
 	overflow: hidden;
-	margin: 2em 0 1.5em 0;
+	margin: 1.5em 0 1em 0;
 }
 
 
@@ -74,7 +74,7 @@ p {
 }
 
 #feature.content-mode #feature_hero_container {
-	height: 20%;
+	height: 21%;
 }
 
 #feature_hero {
@@ -144,7 +144,7 @@ p {
 
 #feature_content_wrapper {
 	z-index: 2;
-	height: 70%;
+	height: 69%;
 	display: flex;
 	position: relative;
 	align-items: stretch;
@@ -275,6 +275,11 @@ p {
 	height: 21px;
 	opacity: 0.8;
 	cursor: pointer;
+}
+
+#feature.content-mode.player-active #track_info,
+#feature.content-mode.player-active #player_controls {
+	filter: brightness(0.7);
 }
 
 #feature.content-mode.player-paused #track_info,
