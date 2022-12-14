@@ -235,12 +235,13 @@ p {
 	z-index: 2;
 	flex: 0 0 50px;
 	position: relative;
+	transition: filter 0.5s ease;
 }
 
 #player_controls>* {
 	opacity: 0;
 	transform: translateY(100%);
-	transition: transform 1s ease, opacity 2.5s ease, filter 0.5s ease;
+	transition: transform 1s ease, opacity 2.5s ease;
 }
 
 #feature.player-active #player_controls>* {
