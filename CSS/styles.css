@@ -276,8 +276,8 @@ p {
 }
 
 #player_controls_buttons .player-controls-button img {
-	width: 21px;
-	height: 21px;
+	width: 1em;
+	height: 1em;
 	opacity: 0.8;
 	cursor: pointer;
 }
@@ -389,6 +389,12 @@ p {
 	}
 	#navigation {
 		font-size: 0.85em;
+	}
+	#track_info {
+		font-size: 0.7em;
+	}
+	#player_controls {
+		font-size: 0.9em;
 	}
 	#feature_content_wrapper {
 		font-size: 0.85em;
