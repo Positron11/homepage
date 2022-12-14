@@ -127,11 +127,7 @@ p {
 	display: inline-block;
 	text-shadow: 2px 2px 4px black;
 	text-decoration: underline rgba(238,238,238,0);
-	transition: text-decoration 0.2s ease, text-shadow 0.2s ease, transform 0.1s ease;
-}
-
-#navigation .navigation-link a:active {
-	transform: scale(0.9);
+	transition: text-decoration 0.2s ease, text-shadow 0.2s ease;
 }
 
 #navigation .navigation-link:not(:last-child)::after {
