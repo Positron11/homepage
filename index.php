@@ -47,7 +47,7 @@
 		<div id="feature_container">
 			<div id="feature">
 				<!-- Dimmers -->
-				<div id="blinds"></div>
+				<div id="blinds" class="closed"></div>
 				<div id="dimmer"></div>
 
 				<!-- Track info -->
