@@ -45,16 +45,19 @@ $(function(){
 	// Initialize track durations
 	track_display_duration = secondsToDisplayTime(track.duration);
 
+	// Toggle text
+	$("[data-toggle-text]").on("click", function() {
+		[$(this)[0].innerHTML, $(this)[0].dataset.toggleText] = [$(this)[0].dataset.toggleText, $(this)[0].innerHTML];
+	});
+
 	// Show/hide content
 	$("#content_button").on("click", function() {
-		if ($(this).text() == "View Content") {
-			$(this).text("Hide Content");
-			$("#feature").addClass("content-mode"); 
-			$("#hero_logo").hide("slow");
-		} else {
-			$(this).text("View Content");
+		if ($("#feature").hasClass("content-mode")) {
 			$("#feature").removeClass("content-mode"); 
 			$("#hero_logo").show();
+		} else {
+			$("#feature").addClass("content-mode"); 
+			$("#hero_logo").hide("slow");
 		}
 	});
 

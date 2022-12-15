@@ -66,7 +66,7 @@
 							
 							<div id="navigation">
 								<div class="navigation-link">
-									<a href="#" rel="noopener noreferrer" id="content_button">View Content</a>
+									<a href="#" rel="noopener noreferrer" id="content_button" data-toggle-text="Hide">Enter</a>
 								</div>
 								<div class="navigation-link">
 									<a href="https://open.spotify.com/user/8czit3cyg2ngnoft5mkpm7fbb" target="_blank" rel="noopener noreferrer">Spotify</a>
