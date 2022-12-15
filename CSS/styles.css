@@ -121,6 +121,7 @@ p {
 #navigation {
 	display: flex;
 	column-gap: 0.5em;
+	overflow: visible;
 	flex-direction: row;
 	justify-content: center;
 }
