@@ -31,8 +31,9 @@
 	<meta name="twitter:card" content="summary_large_image">
 
 	<!-- Google fonts and fontawesome -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet"> 
 	
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
