@@ -18,7 +18,7 @@ var cheatcode = "isakov";
 var cheatcode_cache = "";
 
 // Set initial main background image 
-$("#feature").css("background-image", "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 6)) + ".gif')");
+$("#feature").css("background-image", "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 6)) + ".gif')");
 
 // Initialize blinds timeout
 var blinds_timeout = window.setTimeout(function() {
