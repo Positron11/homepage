@@ -7,7 +7,7 @@
 	<!-- Page meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/png" href="Assets/Images/Main/favicon.svg">
+	<link rel="shortcut icon" type="image/png" href="Assets/Images/Main/Site/favicon.svg">
 	
 	<!-- Description meta -->
 	<meta name="author" content="Aarush Kumbhakern">
@@ -25,7 +25,7 @@
 	<meta property="og:title" content="Aarush Kumbhakern">
 	<meta property="og:article:author" content="Aarush Kumbhakern">
 	<meta property="og:description" content="Consider this a description of sorts.">
-	<meta property="og:image" content="http://aarushkumbhakern.rf.gd/Assets/Images/Main/og_thumbnail.png">
+	<meta property="og:image" content="http://aarushkumbhakern.rf.gd/Assets/Images/Main/Site/og_thumbnail.png">
 
 	<!-- Twitter article meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
@@ -90,7 +90,7 @@
 						</div>
 
 						<!-- Scroll indicator icon -->
-						<img id="content_scroll_indicator" class="player-controls-button" src="Assets/Images/Main/down.svg">
+						<img id="content_scroll_indicator" class="player-controls-button" src="Assets/Images/Main/Icons/down.svg">
 					</div>
 				</div>
 				
@@ -99,15 +99,15 @@
 					<div id="track_progress">0:00 / 0:00</div>
 
 					<div id="player_controls_buttons">
-						<div id="prev_track" class="player-controls-button"><img src="Assets/Images/Main/prev_track.svg"></div>
-						<div id="play_pause" class="player-controls-button"><img src="Assets/Images/Main/play.svg"></div>
-						<div id="next_track" class="player-controls-button"><img src="Assets/Images/Main/next_track.svg"></div>
+						<div id="prev_track" class="player-controls-button"><img src="Assets/Images/Main/Icons/prev_track.svg"></div>
+						<div id="play_pause" class="player-controls-button"><img src="Assets/Images/Main/Icons/play.svg"></div>
+						<div id="next_track" class="player-controls-button"><img src="Assets/Images/Main/Icons/next_track.svg"></div>
 					</div>
 
 					<div id="keyboard_shortcut_hints">
-						<img id="prev_track_keyboard_shortcut_hint" src="Assets/Images/Main/left_arrow_key.svg">
-						<img id="play_pause_keyboard_shortcut_hint" src="Assets/Images/Main/spacebar.svg">
-						<img id="next_track_keyboard_shortcut_hint" src="Assets/Images/Main/right_arrow_key.svg">
+						<img id="prev_track_keyboard_shortcut_hint" src="Assets/Images/Main/Icons/left_arrow_key.svg">
+						<img id="play_pause_keyboard_shortcut_hint" src="Assets/Images/Main/Icons/spacebar.svg">
+						<img id="next_track_keyboard_shortcut_hint" src="Assets/Images/Main/Icons/right_arrow_key.svg">
 					</div>
 				</div>
 				

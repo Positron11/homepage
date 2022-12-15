@@ -17,6 +17,9 @@ var track = document.getElementById("track");
 var cheatcode = "isakov";
 var cheatcode_cache = "";
 
+// Set initial main background image 
+$("#feature").css("background-image", "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 6)) + ".gif')");
+
 // Initialize blinds timeout
 var blinds_timeout = window.setTimeout(function() {
 	$("#blinds").removeClass("closed");
@@ -81,11 +84,11 @@ $(function(){
 
 	// When track...
 	$(track).bind("playing", function(){ // begun to play
-		$("#play_pause img").attr("src", "Assets/Images/Main/pause.svg");
+		$("#play_pause img").attr("src", "Assets/Images/Main/Icons/pause.svg");
 		$("#feature").removeClass("player-paused").addClass("player-playing");
 	});
 	$(track).bind("pause", function(){ // is paused
-		$("#play_pause img").attr("src", "Assets/Images/Main/play.svg");
+		$("#play_pause img").attr("src", "Assets/Images/Main/Icons/play.svg");
 		$("#feature").removeClass("player-playing").addClass("player-paused");
 	});
 	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
@@ -163,7 +166,7 @@ function togglePlayPause() {
 
 // Switch tracks
 function switchTrack(track_index) {
-	$("#play_pause").attr("src", "Assets/Images/Main/loading.svg");
+	$("#play_pause").attr("src", "Assets/Images/Main/Icons/loading.svg");
 	$(track).attr("src", tracks_path + track_list[track_index - 1]);
 	track.pause(); track.load(); track.play();
 }
