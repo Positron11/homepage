@@ -71,7 +71,7 @@ $(function(){
 	});
 	
 	// Activate music player by logo
-	$("#hero_logo").on("longpress", function() {activatePlayer();});
+	$("#hero_logo").on("long-press", function() {activatePlayer();});
 
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
