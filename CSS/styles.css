@@ -139,6 +139,10 @@ p {
 	margin-left: 0.5em;
 }
 
+#feature:not(.player-activated) #toggle_player {
+	display: none;
+}
+
 
 /* FEATURE CONTENT */
 
@@ -305,7 +309,7 @@ p {
 	opacity: 0.1;
 }
 
-#feature.player-active #hint {
+#feature.player-activated #hint {
 	opacity: 0;
 }
 

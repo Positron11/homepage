@@ -73,7 +73,7 @@ $(function(){
 	if (!$("#feature").hasClass("player-activated")) {
 		$("#hero_logo").on("long-press", function() {
 			$("#feature").addClass("player-activated");
-			activatePlayer();
+			togglePlayer();
 		});
 	}
 	
@@ -86,7 +86,7 @@ $(function(){
 			$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
 			if (cheatcode_cache == "isakov") {
 				$("#feature").addClass("player-activated");
-				activatePlayer();
+				togglePlayer();
 			}
 		}
 	});
@@ -159,9 +159,13 @@ function replayAnimation(element, animation) {
 }
 
 // Activate player
-function activatePlayer() {
-	if (!player_activated) {
-		player_activated = true;
+function togglePlayer() {
+	if ($("#feature").hasClass("player-active")) {
+		changeBackgroundImage(intial_background_image_css);
+		$("#feature").removeClass("player-active");
+		track.pause();
+	} else {
+		$("#toggle_player").show();
 		$("#feature").addClass("player-active");
 		getTrackInfo();
 		track.play();
