@@ -66,7 +66,7 @@
 							
 							<div id="navigation">
 								<div class="navigation-link">
-									<a href="#" id="content_button" onclick="$('#feature').toggleClass('content-mode');" data-toggle-text="Hide Content">Show Content</a>
+									<a href="#" id="content_button" onclick="toggleContentMode();" data-toggle-text="Hide Content">Show Content</a>
 								</div>
 								<div class="navigation-link" id="toggle_player">
 									<a href="#" onclick="togglePlayer();" data-toggle-text="Show Player">Close Player</a>

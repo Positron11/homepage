@@ -173,7 +173,13 @@ function getTrackInfo() {
 	document.title = track_info[0] + " · " + track_info[1];
 }
 
-// Activate player
+// Toggle content mode 
+function toggleContentMode() {
+	$('#feature').toggleClass('content-mode');
+	$('#feature').hasClass('content-mode') ? $("#hero_logo").hide("slow") : $("#hero_logo").show();
+}
+
+// Toggle player
 function togglePlayer() {
 	if ($("#feature").hasClass("player-active")) {
 		changeBackgroundImage(intial_background_image_css);
