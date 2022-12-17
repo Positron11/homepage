@@ -15,6 +15,7 @@ var track = document.getElementById("track");
 var cheatcode = "isakov";
 var cheatcode_cache = "";
 
+
 // Set initial main background image 
 var intial_background_image_css = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url(Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 14)) + ".gif)"
 $("#feature").css("background-image", intial_background_image_css);
@@ -24,40 +25,20 @@ var blinds_timeout = window.setTimeout(function() {
 	$("#blinds").removeClass("closed");
 }, 500);
 
+
+// Main function
 $(function(){
-	// Set hint text
-	if (isMobile()) {
-		$("#hint").html("<span>Press and hold logo to activate player.</span>");
-	} else {
-		$("#cheatcode").attr("data-after", "Isakov");
-	}
+	// Initialize hint
+	if (isMobile()) {$("#hint").html("<span>Press and hold logo to activate player.</span>");}
 
-	// Show hint
-	$("#hint").removeClass("hidden");
-
-	// Shuffle library
+	// Shuffle library and initialize track
 	shuffleArray(track_list);
-
-	// Initialize track
 	$(track).attr("src", tracks_path + track_list[0]);
-
-	// Initialize track durations
 	track_display_duration = secondsToDisplayTime(track.duration);
 
-	// Toggle text
+	// Toggle text elements
 	$("[data-toggle-text]").on("click", function() {
 		[$(this)[0].innerHTML, $(this)[0].dataset.toggleText] = [$(this)[0].dataset.toggleText, $(this)[0].innerHTML];
-	});
-
-	// Show/hide content
-	$("#content_button").on("click", function() {
-		if ($("#feature").hasClass("content-mode")) {
-			$("#feature").removeClass("content-mode"); 
-			$("#hero_logo").show();
-		} else {
-			$("#feature").addClass("content-mode"); 
-			$("#hero_logo").hide("slow");
-		}
 	});
 
 	// Show/hide scroll indicator 
@@ -69,16 +50,14 @@ $(function(){
 		}
 	});
 	
-	// Activate music player by logo
-	if (!$("#feature").hasClass("player-activated")) {
+	// Activate music player...
+	if (!$("#feature").hasClass("player-activated")) { // ...by logo
 		$("#hero_logo").on("long-press", function() {
 			$("#feature").addClass("player-activated");
 			togglePlayer();
 		});
 	}
-	
-	// Activate music player by keycode
-	$(document).keypress(function(event) {
+	$(document).keypress(function(event) { // ...by keycode
 		if (!$("#feature").hasClass("player-activated")) {
 			cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "";
 			for (let i = 0; i < cheatcode_cache.length; i++) { if (cheatcode_cache[i] != cheatcode[i]) { cheatcode_cache = ""; } }
@@ -92,96 +71,78 @@ $(function(){
 	});
 
 	// When track...
-	$(track).bind("playing", function(){ // begun to play
+	$(track).bind("playing", function() { // ...begun to play
 		$("#play_pause img").attr("src", "Assets/Images/Main/Icons/pause.svg");
 		$("#feature").removeClass("player-paused").addClass("player-playing");
 	});
-	$(track).bind("pause", function(){ // is paused
+	$(track).bind("pause", function() { // ...is paused
 		$("#play_pause img").attr("src", "Assets/Images/Main/Icons/play.svg");
 		$("#feature").removeClass("player-playing").addClass("player-paused");
 	});
-	$(track).bind("durationchange", function(){ // changes duration (when track changes, really)
+	$(track).bind("durationchange", function() { // ...changes duration (when track changes, really)
 		track_display_duration = secondsToDisplayTime(track.duration);
 	});
-
-	// Play/pause track
-	$("#play_pause").on("click", function() {
-		togglePlayPause();
-	});
-	
-	// Navigate library
-	$("#prev_track, #next_track").on("click", function() {
-		this.id == "next_track" ? track_index >= track_count ? track_index = 1 : track_index++ : track_index <= 1 ? track_index = track_count : track_index--;
+	$(track).bind("timeupdate", function() { // ...continues to play
+		track_display_progress = secondsToDisplayTime(track.currentTime);
+		$("#track_progress").text(track_display_progress + " / " + track_display_duration);
+	})
+	$(track).bind("ended", function() { // ...ends
+		track_index >= track_count ? track_index = 1 : track_index++;
 		switchTrack(track_index);
-		getTrackInfo();
 	});
 
-	// Keyboard input
+	// Player controls
+	$("#play_pause").on("click", function() {togglePlayPause();}); // Play/pause
+	$("#prev_track, #next_track").on("click", function() {
+		if (this.id == "next_track") {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
+		else { track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
+		switchTrack(track_index);
+	});
+
+	// Keyboard input player controls
 	$(document).keydown(function(event){
 		if ($("#feature").hasClass("player-active")) {
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
-				togglePlayPause();// Play/pause
+				togglePlayPause(); // Play/pause
 				replayAnimation("#play_pause_keyboard_shortcut_hint", "key-flash 0.3s ease");
-			} else if (keycode == '37' || keycode == '39') { // Left or right arrow
-				if (keycode == '37') { 
+			} else if (keycode == '37' || keycode == '39') {
+				if (keycode == '37') { // Left arrow
 					track_index <= 1 ? track_index = track_count : track_index--; // Previous track
 					replayAnimation("#prev_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
-				} else { 
+				} else { // Right arrow
 					track_index >= track_count ? track_index = 1 : track_index++; // Next track
 					replayAnimation("#next_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
 				}
 				switchTrack(track_index);
-				getTrackInfo();
 			}
 		}
 	});
-	
-	// Update progress and name display
-	$(track).bind("timeupdate", function(){
-		track_display_progress = secondsToDisplayTime(track.currentTime);
-		$("#track_progress").text(track_display_progress + " / " + track_display_duration);
-	})
-
-	// Autoplay
-	$(track).bind("ended", function(){
-		track_index >= track_count ? track_index = 1 : track_index++;
-		switchTrack(track_index);
-		getTrackInfo();
-	});
 }); 
+
+
+// Detect mobile device 
+function isMobile() { 
+	return ('ontouchstart' in document.documentElement); 
+}
+
+// Change Background Image
+function changeBackgroundImage(new_background_image_css) {
+	if ($("#feature").css("background-image") != new_background_image_css) {
+		$("#blinds").addClass("closed");
+		window.clearTimeout(blinds_timeout);
+		blinds_timeout = window.setTimeout(function() {
+			$("#feature").css("background-image", new_background_image_css);
+			$("#blinds").removeClass("closed");
+		}, 500);
+	}
+}
 
 // Replay animation
 function replayAnimation(element, animation) {
 	$(element).css("animation", animation).on("animationend webkitAnimationEnd", function() {
 		$(this).css("animation", "none");
 	});
-}
-
-// Activate player
-function togglePlayer() {
-	if ($("#feature").hasClass("player-active")) {
-		changeBackgroundImage(intial_background_image_css);
-		$("#feature").removeClass("player-active");
-		track.pause();
-	} else {
-		$("#toggle_player").show();
-		$("#feature").addClass("player-active");
-		getTrackInfo();
-		track.play();
-	}
-}
-
-// Toggle play/pause
-function togglePlayPause() {
-	$("#feature").hasClass("player-paused") ? track.play() : track.pause();
-}
-
-// Switch tracks
-function switchTrack(track_index) {
-	$("#play_pause").attr("src", "Assets/Images/Main/Icons/loading.svg");
-	$(track).attr("src", tracks_path + track_list[track_index - 1]);
-	track.pause(); track.load(); track.play();
 }
 
 // Convert seconds to readable string
@@ -212,19 +173,27 @@ function getTrackInfo() {
 	document.title = track_info[0] + " · " + track_info[1];
 }
 
-// Change Background Image
-function changeBackgroundImage(new_background_image_css) {
-	if ($("#feature").css("background-image") != new_background_image_css) {
-		$("#blinds").addClass("closed");
-		window.clearTimeout(blinds_timeout);
-		blinds_timeout = window.setTimeout(function() {
-			$("#feature").css("background-image", new_background_image_css);
-			$("#blinds").removeClass("closed");
-		}, 500);
+// Activate player
+function togglePlayer() {
+	if ($("#feature").hasClass("player-active")) {
+		changeBackgroundImage(intial_background_image_css);
+		track.pause();
+	} else {
+		getTrackInfo();
+		track.play();
 	}
+	$("#feature").toggleClass("player-active");
 }
 
-// Detect mobile device 
-function isMobile() { 
-	return ('ontouchstart' in document.documentElement); 
+// Toggle play/pause
+function togglePlayPause() {track.paused ? track.play() : track.pause();}
+
+// Switch tracks
+function switchTrack(track_index) {
+	$("#play_pause").attr("src", "Assets/Images/Main/Icons/loading.svg");
+	$(track).attr("src", tracks_path + track_list[track_index - 1]);
+	getTrackInfo();
+	track.pause(); 
+	track.load(); 
+	track.play();
 }
