@@ -1,6 +1,7 @@
 /* GLOBAL */
 
-body, html {
+body, 
+html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -101,10 +102,10 @@ p {
 }
 
 #hero_logo:active:not(#feature.player-active #hero_logo) {
-	filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.7));
+	filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.5));
 }
 
-#feature.key-activated.player-active #hero_logo {
+#feature.player-active #hero_logo {
 	animation: glow 1s ease;
 }
 
@@ -191,7 +192,8 @@ p {
 
 /* BLINDS AND DIMMER */
 
-#blinds, #dimmer {
+#blinds, 
+#dimmer {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -211,26 +213,42 @@ p {
 	opacity: 0.4;
 }
 
-#feature.player-paused #dimmer {
+#feature.player-active.player-paused #dimmer {
 	opacity: 0.8;
 }
 
 
 /* TRACK INFO AND PLAYER CONTROLS */
 
-#track_info {
+#track_info, 
+#player_controls {
 	z-index: 2;
 	opacity: 0;
 	flex: 0 0 0;
-	font-size: 0.8em;
 	position: relative;
 	text-align: center;
 	text-shadow: 2px 2px 4px black;
+	transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+#feature.player-active #track_info, 
+#feature.player-active #player_controls {
+	opacity: 1;
 	transition: opacity 2s ease, filter 0.5s ease;
 }
 
-#feature.player-active #track_info {
-	opacity: 1;
+#feature.content-mode.player-active #track_info,
+#feature.content-mode.player-active #player_controls {
+	filter: brightness(0.5);
+}
+
+#feature.content-mode.player-paused #track_info,
+#feature.content-mode.player-paused #player_controls {
+	filter: brightness(0.2);
+}
+
+#track_info {
+	font-size: 0.8em;
 }
 
 #track_artist {
@@ -239,34 +257,10 @@ p {
 	margin-bottom: 0.5em;
 }
 
-#player_controls {
-	z-index: 2;
-	flex: 0 0 0;
-	position: relative;
-	pointer-events: none;
-	transition: filter 0.5s ease;
-}
-
-#feature.player-active #player_controls {
-	pointer-events: all;
-}
-
-#player_controls>* {
-	opacity: 0;
-	transform: translateY(100%);
-	transition: transform 1s ease, opacity 2.5s ease;
-}
-
-#feature.player-active #player_controls>* {
-	opacity: 1;
-	transform: translateY(0%);
-}
-
 #track_progress {
 	font-size: 0.85em;
 	text-align: center;
 	margin-bottom: 1em;
-	text-shadow: 2px 2px 4px black;
 }
 
 #player_controls_buttons {
@@ -292,17 +286,6 @@ p {
 	opacity: 0.15;
 	height: 0.85em;
 }
-
-#feature.content-mode.player-active #track_info,
-#feature.content-mode.player-active #player_controls {
-	filter: brightness(0.5);
-}
-
-#feature.content-mode.player-paused #track_info,
-#feature.content-mode.player-paused #player_controls {
-	filter: brightness(0.2);
-}
-
 
 
 /* HINT */
@@ -380,7 +363,7 @@ p {
 
 @keyframes glow {
 	0% { filter: none; }
-	30% { filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.7)); }
+	30% { filter: drop-shadow(0px 0px 15px rgba(255,255,255,0.7)); }
 	100% { filter: none; }
 }
 
