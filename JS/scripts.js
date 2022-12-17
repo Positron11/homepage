@@ -1,6 +1,4 @@
 // Initialize vars
-var player_activated = false;
-
 var tracks_path = "Assets/Music/";
 
 var track_index = 1;
@@ -72,17 +70,24 @@ $(function(){
 	});
 	
 	// Activate music player by logo
-	$("#hero_logo").on("long-press", function() {activatePlayer();});
-
+	if (!$("#feature").hasClass("player-activated")) {
+		$("#hero_logo").on("long-press", function() {
+			$("#feature").addClass("player-activated");
+			activatePlayer();
+		});
+	}
+	
 	// Activate music player by keycode
 	$(document).keypress(function(event) {
-		cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "";
-		for (let i = 0; i < cheatcode_cache.length; i++) { if (cheatcode_cache[i] != cheatcode[i]) { cheatcode_cache = ""; } }
-		$("#cheatcode").attr("data-before", cheatcode_cache);
-		$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
-		if (cheatcode_cache == "isakov") { 
-			$("#feature").addClass("key-activated");
-			activatePlayer(); 
+		if (!$("#feature").hasClass("player-activated")) {
+			cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "";
+			for (let i = 0; i < cheatcode_cache.length; i++) { if (cheatcode_cache[i] != cheatcode[i]) { cheatcode_cache = ""; } }
+			$("#cheatcode").attr("data-before", cheatcode_cache);
+			$("#cheatcode").attr("data-after", cheatcode.slice(cheatcode_cache.length, cheatcode.length));
+			if (cheatcode_cache == "isakov") {
+				$("#feature").addClass("player-activated");
+				activatePlayer();
+			}
 		}
 	});
 
@@ -113,7 +118,7 @@ $(function(){
 
 	// Keyboard input
 	$(document).keydown(function(event){
-		if (player_activated) {
+		if ($("#feature").hasClass("player-active")) {
 			var keycode = (event.keyCode ? event.keyCode : event.which); // Get keycode
 			if (keycode == '32') { // Spacebar
 				togglePlayPause();// Play/pause
