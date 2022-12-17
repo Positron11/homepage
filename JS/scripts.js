@@ -18,7 +18,8 @@ var cheatcode = "isakov";
 var cheatcode_cache = "";
 
 // Set initial main background image 
-$("#feature").css("background-image", "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 14)) + ".gif')");
+var intial_background_image_css = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url(Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 14)) + ".gif)"
+$("#feature").css("background-image", intial_background_image_css);
 
 // Initialize blinds timeout
 var blinds_timeout = window.setTimeout(function() {
@@ -195,21 +196,20 @@ function getTrackInfo() {
 	$("#track_title").text(track_info[1]);
 
 	// Change background gif if possible
-	new_background_image = $.inArray(track_info[0] + ".gif", image_list) != -1 ? track_info[0] : "background";
-	changeBackgroundImage(new_background_image);
-	current_background_image = new_background_image;
+	new_background_image_css = "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('Assets/Images/Covers/" + track_info[0] + ".gif')"
+	changeBackgroundImage(new_background_image_css);
 
 	// Set page title
 	document.title = track_info[0] + " · " + track_info[1];
 }
 
 // Change Background Image
-function changeBackgroundImage(filename) {
-	if (filename != current_background_image) {
+function changeBackgroundImage(new_background_image_css) {
+	if ($("#feature").css("background-image") != new_background_image_css) {
 		$("#blinds").addClass("closed");
 		window.clearTimeout(blinds_timeout);
 		blinds_timeout = window.setTimeout(function() {
-			$("#feature").css("background-image", 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url("Assets/Images/Covers/' + filename + '.gif")');
+			$("#feature").css("background-image", new_background_image_css);
 			$("#blinds").removeClass("closed");
 		}, 500);
 	}
