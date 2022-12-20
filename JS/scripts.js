@@ -17,7 +17,7 @@ var cheatcode_cache = "";
 
 
 // Set initial main background image 
-var intial_background_image_css = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url(Assets/Images/Main/Backgrounds/background_" + String(Math.floor(Math.random() * 14)) + ".gif)"
+var intial_background_image_css = "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url(Assets/Images/Main/Backgrounds/" + bg_image_list[Math.floor(Math.random() * bg_image_list.length)] + ")"
 $("#feature").css("background-image", intial_background_image_css);
 
 // Initialize blinds timeout
@@ -87,15 +87,15 @@ $(function(){
 		$("#track_progress").text(track_display_progress + " / " + track_display_duration);
 	})
 	$(track).bind("ended", function() { // ...ends
-		track_index >= track_count ? track_index = 1 : track_index++;
+		track_index >= track_list.length ? track_index = 1 : track_index++;
 		switchTrack(track_index);
 	});
 
 	// Player controls
 	$("#play_pause").on("click", function() {togglePlayPause();}); // Play/pause
 	$("#prev_track, #next_track").on("click", function() {
-		if (this.id == "next_track") {track_index >= track_count ? track_index = 1 : track_index++;} // Next track
-		else { track_index <= 1 ? track_index = track_count : track_index--;} // Previous track
+		if (this.id == "next_track") {track_index >= track_list.length ? track_index = 1 : track_index++;} // Next track
+		else { track_index <= 1 ? track_index = track_list.length : track_index--;} // Previous track
 		switchTrack(track_index);
 	});
 
@@ -108,10 +108,10 @@ $(function(){
 				replayAnimation("#play_pause_keyboard_shortcut_hint", "key-flash 0.3s ease");
 			} else if (keycode == '37' || keycode == '39') {
 				if (keycode == '37') { // Left arrow
-					track_index <= 1 ? track_index = track_count : track_index--; // Previous track
+					track_index <= 1 ? track_index = track_list.length : track_index--; // Previous track
 					replayAnimation("#prev_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
 				} else { // Right arrow
-					track_index >= track_count ? track_index = 1 : track_index++; // Next track
+					track_index >= track_list.length ? track_index = 1 : track_index++; // Next track
 					replayAnimation("#next_track_keyboard_shortcut_hint", "key-flash 0.3s ease");
 				}
 				switchTrack(track_index);
