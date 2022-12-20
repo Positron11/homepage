@@ -9,7 +9,7 @@ html {
 	color: #eee;
 	font-size: 20px;
 	background-color: black;
-	font-family: 'Cormorant Garamond', serif;
+	font-family: 'EB Garamond', serif;
 	user-select: none;
 }
 
@@ -96,7 +96,7 @@ p {
 }
 
 #hero_logo {
-	width: 11em;
+	width: 9em;
 	filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.7));
 	transition: filter 2s ease-in;
 }
