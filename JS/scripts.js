@@ -51,12 +51,12 @@ $(function(){
 	});
 	
 	// Activate music player...
-	if (!$("#feature").hasClass("player-activated")) { // ...by logo
-		$("#hero_logo").on("long-press", function() {
+	$("#hero_logo").on("long-press", function() { // ...by logo
+		if (!$("#feature").hasClass("player-activated")) { 
 			$("#feature").addClass("player-activated");
 			togglePlayer();
-		});
-	}
+		}
+	});
 	$(document).keypress(function(event) { // ...by keycode
 		if (!$("#feature").hasClass("player-activated")) {
 			cheatcode_cache += 96 < event.which && event.which < 123 ? event.key : "";
