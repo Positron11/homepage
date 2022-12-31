@@ -282,13 +282,15 @@ p {
 }
 
 #keyboard_shortcut_hints {
+	display: flex;
+	column-gap: 0.3em;
 	margin-top: 0.5em;
-	text-align: center;
+	justify-content: center;
 }
 
 #keyboard_shortcut_hints img {
 	opacity: 0.15;
-	height: 0.85em;
+	height: 0.8em;
 }
 
 
